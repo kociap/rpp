@@ -6,12 +6,15 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD 17)
 
 set(RPP_SOURCE_FILES
-
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/response.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/rpp.cpp
 )
 
 set(RPP_INCLUDE_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
+set(RPP_CURL_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/curl/include)
+
 add_library(rpp RPP_SOURCE_FILES)
-target_include_directories(rpp RPP_INCLUDE_DIRS CURL_INCLUDE_DIRS)
+target_include_directories(rpp RPP_INCLUDE_DIRS RPP_CURL_INCLUDE_DIRS)
