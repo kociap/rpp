@@ -16,5 +16,8 @@ set(RPP_INCLUDE_DIRS
 
 set(RPP_CURL_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/curl/include)
 
-add_library(rpp RPP_SOURCE_FILES)
-target_include_directories(rpp RPP_INCLUDE_DIRS RPP_CURL_INCLUDE_DIRS)
+add_library(rpp ${RPP_SOURCE_FILES})
+target_include_directories(rpp
+    PUBLIC ${RPP_INCLUDE_DIRS}
+    PRIVATE ${RPP_CURL_INCLUDE_DIRS}
+)
