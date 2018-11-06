@@ -5,9 +5,8 @@
 #include "types.hpp"
 
 namespace rpp {
-    Response get(String url);
-    Response post(String url);
-    Response put(String url);
+    Response get(String const &url);
+    Response post(String const &url, String const &headers, String const &data);
 } // namespace rpp
 
 #endif // !RPP_RPP_HPP
