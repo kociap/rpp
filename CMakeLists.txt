@@ -18,7 +18,7 @@ add_subdirectory(curl)
 
 set(RPP_CURL_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/curl/include)
 
-add_library(rpp ${RPP_SOURCE_FILES})
+add_library(rpp STATIC ${RPP_SOURCE_FILES})
 target_link_libraries(rpp libcurl)
 target_include_directories(rpp
     PUBLIC ${RPP_INCLUDE_DIRS}
