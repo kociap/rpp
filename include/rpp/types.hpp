@@ -3,6 +3,8 @@
 
 #include <string>
 
-using String = std::string;
+namespace rpp {
+    using String = std::string;
+}
 
 #endif // !RPP_TYPES_HPP
