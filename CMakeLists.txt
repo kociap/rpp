@@ -15,6 +15,8 @@ set(RPP_INCLUDE_DIRS
     ${PROJECT_SOURCE_DIR}/include
 )
 
+# curl
+set(BUILD_TESTING OFF) # Disable curl tests
 add_subdirectory(curl)
 
 set(RPP_CURL_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/curl/include)
