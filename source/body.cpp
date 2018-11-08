@@ -15,7 +15,7 @@ namespace rpp {
         }
     }
 
-    String Body::toString() {
+    String Body::toString() const {
         return body;
     }
 } // namespace rpp

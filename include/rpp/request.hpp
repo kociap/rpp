@@ -7,6 +7,7 @@ namespace rpp {
     class Request {
     public:
         Request(Url const &);
+        Request(Url &&);
 
         Response get();
         Response post(Body const &);

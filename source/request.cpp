@@ -2,6 +2,9 @@
 #include "curl/curl.h"
 
 namespace rpp {
+    Request::Request(Url const &url) : url(url) {}
+    Request::Request(Url &&url) : url(std::move(url)) {}
+
     size_t curlWriteFunction(char *data, size_t, size_t dataSize, String *userdata) {
         userdata->append(data, dataSize);
         return dataSize;
