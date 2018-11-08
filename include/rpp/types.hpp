@@ -1,10 +1,7 @@
 #ifndef RPP_TYPES_HPP
 #define RPP_TYPES_HPP
 
-#include <string>
-
-namespace rpp {
-    using String = std::string;
-}
+#include "string.hpp"
+#include "url.hpp"
 
 #endif // !RPP_TYPES_HPP

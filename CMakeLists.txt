@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(RPP_SOURCE_FILES
     ${PROJECT_SOURCE_DIR}/source/response.cpp
     ${PROJECT_SOURCE_DIR}/source/rpp.cpp
+    ${PROEJCT_SOURCE_DIR}/source/url.cpp
 )
 
 set(RPP_INCLUDE_DIRS
