@@ -9,6 +9,8 @@ set(RPP_SOURCE_FILES
     ${PROJECT_SOURCE_DIR}/source/response.cpp
     ${PROJECT_SOURCE_DIR}/source/rpp.cpp
     ${PROJECT_SOURCE_DIR}/source/url.cpp
+    ${PROJECT_SOURCE_DIR}/source/body.cpp
+    ${PROJECT_SOURCE_DIR}/source/request.cpp
 )
 
 set(RPP_INCLUDE_DIRS
