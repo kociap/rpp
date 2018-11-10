@@ -1,19 +1,27 @@
 #ifndef RPP_REQUEST_HPP
 #define RPP_REQUEST_HPP
 
+#include "curl/curl.h"
 #include "types.hpp"
 
 namespace rpp {
     class Request {
     public:
-        Request(Url const &);
-        Request(Url &&);
+        Request();
+        Request(Request const&) = delete;
+        Request(Request&&);
+        Request& operator=(Request const&) = delete;
+        Request& operator=(Request&&);
+        ~Request();
 
-        Response get();
-        Response post(Body const &);
+        void set_verbose(bool);
+        void set_verify_ssl(bool);
+
+        Response get(URL const&);
+        Response post(URL const&, Body const&);
 
     private:
-        Url url;
+        CURL* handle;
     };
 } // namespace rpp
 

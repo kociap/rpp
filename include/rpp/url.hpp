@@ -2,15 +2,17 @@
 #define RPP_URL_HPP
 
 #include "string.hpp"
+#include "urlsearchparams.hpp"
 
 namespace rpp {
-    class Url {
+    class URL {
     public:
-        Url(String const &);
-        Url(String &&);
-        Url(char const *);
+        URL(String const&);
+        URL(String&&);
+        URL(char const*);
 
-        String getFullUrl() const;
+        String get_full_url() const;
+        URL_Search_Params get_search_params() const;
 
     private:
         String url;
