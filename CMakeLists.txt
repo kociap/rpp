@@ -12,6 +12,7 @@ set(RPP_SOURCE_FILES
     ${PROJECT_SOURCE_DIR}/source/body.cpp
     ${PROJECT_SOURCE_DIR}/source/request.cpp
     ${PROJECT_SOURCE_DIR}/source/urlsearchparams.cpp
+    ${PROJECT_SOURCE_DIR}/source/headers.cpp
 )
 
 set(RPP_INCLUDE_DIRS
