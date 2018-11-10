@@ -2,21 +2,28 @@
 #include "curl/curl.h"
 
 namespace rpp {
-    Request::Request() : handle(curl_easy_init()) {}
+    Request::Request() : handle(curl_easy_init()), headers(nullptr) {}
 
-    Request::Request(Request&& req) : handle(req.handle) {
+    Request::Request(Request&& req) : handle(req.handle), headers(req.headers) {
         req.handle = nullptr;
+        req.headers = nullptr;
     }
 
     Request& Request::operator=(Request&& req) {
         handle = req.handle;
+        headers = req.headers;
         req.handle = nullptr;
+        req.headers = nullptr;
         return *this;
     }
 
     Request::~Request() {
         if (handle != nullptr) {
             curl_easy_cleanup(handle);
+        }
+
+        if (headers != nullptr) {
+            curl_slist_free_all(headers);
         }
     }
 
@@ -26,6 +33,28 @@ namespace rpp {
 
     void Request::set_verify_ssl(bool verify) {
         curl_easy_setopt(handle, CURLOPT_SSL_VERIFYPEER, verify);
+    }
+
+    void Request::set_headers(Headers const& hs) {
+        if (hs.headers.empty()) {
+            curl_easy_setopt(handle, CURLOPT_HTTPHEADER, NULL);
+            return;
+        }
+
+        if (headers != nullptr) {
+            curl_slist_free_all(headers);
+            headers = NULL;
+        }
+
+        for (auto const& [key, value] : hs.headers) {
+            if (value.empty()) {
+                headers = curl_slist_append(headers, (key + ";").data());
+            } else {
+                headers = curl_slist_append(headers, (key + ": " + value).data());
+            }
+        }
+
+        curl_easy_setopt(handle, CURLOPT_HTTPHEADER, headers);
     }
 
     size_t curl_write_function(char* data, size_t, size_t data_size, String* user_data) {

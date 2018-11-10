@@ -2,6 +2,7 @@
 #define RPP_TYPES_HPP
 
 #include "body.hpp"
+#include "headers.hpp"
 #include "response.hpp"
 #include "string.hpp"
 #include "url.hpp"

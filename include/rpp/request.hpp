@@ -16,12 +16,14 @@ namespace rpp {
 
         void set_verbose(bool);
         void set_verify_ssl(bool);
+        void set_headers(Headers const&);
 
         Response get(URL const&);
         Response post(URL const&, Body const&);
 
     private:
         CURL* handle;
+        curl_slist* headers;
     };
 } // namespace rpp
 
