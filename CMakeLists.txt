@@ -20,7 +20,8 @@ set(RPP_INCLUDE_DIRS
 )
 
 # curl
-set(BUILD_TESTING OFF) # Disable curl tests
+set(BUILD_TESTING CACHE BOOL OFF) # Disable curl tests
+set(BUILD_CURL_EXE CACHE BOOL OFF)
 add_subdirectory(curl)
 
 set(RPP_CURL_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/curl/include)
