@@ -9,7 +9,8 @@ namespace rpp {
             uint64 equals_char_position = str.find('=', last_position + 1);
             uint64 next_position = str.find('&', last_position + 1);
             next_position = next_position > str.size() ? str.size() : next_position;
-            params.try_emplace(str.substr(last_position, equals_char_position), str.substr(equals_char_position + 1, next_position));
+            params.try_emplace(str.substr(last_position, equals_char_position - last_position),
+                               str.substr(equals_char_position + 1, next_position - equals_char_position + 1));
             last_position = next_position + 1;
         }
     }
@@ -21,7 +22,8 @@ namespace rpp {
             uint64 equals_char_position = str.find('=', last_position + 1);
             uint64 next_position = str.find('&', last_position + 1);
             next_position = next_position > str.size() ? str.size() : next_position;
-            params.try_emplace(str.substr(last_position, equals_char_position), str.substr(equals_char_position + 1, next_position));
+            params.try_emplace(str.substr(last_position, equals_char_position - last_position),
+                               str.substr(equals_char_position + 1, next_position - equals_char_position + 1));
             last_position = next_position + 1;
         }
     }

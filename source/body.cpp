@@ -1,13 +1,13 @@
 #include "rpp/body.hpp"
 
 namespace rpp {
-    void Body::add(std::initializer_list<Body_Item> const& params) {
+    void Body::append(std::initializer_list<Body_Item> const& params) {
         for (Body_Item const& param : params) {
-            add(param);
+            append(param);
         }
     }
 
-    void Body::add(Body_Item const& param) {
+    void Body::append(Body_Item const& param) {
         if (!body.empty()) {
             body += "&" + param.key + "=" + param.value;
         } else {

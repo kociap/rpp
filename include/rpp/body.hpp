@@ -11,8 +11,8 @@ namespace rpp {
 
     class Body {
     public:
-        void add(std::initializer_list<Body_Item> const&);
-        void add(Body_Item const&);
+        void append(std::initializer_list<Body_Item> const&);
+        void append(Body_Item const&);
         String to_string() const;
 
     private:
