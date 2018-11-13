@@ -1,7 +1,7 @@
 #ifndef RPP_RESPONSE_HPP
 #define RPP_RESPONSE_HPP
 
-#include "types.hpp"
+#include "string.hpp"
 
 #include <cstdint>
 

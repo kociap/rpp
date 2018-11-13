@@ -1,7 +1,7 @@
 #ifndef RPP_HEADERS_HPP
 #define RPP_HEADERS_HPP
 
-#include "types.hpp"
+#include "string.hpp"
 
 #include <map>
 

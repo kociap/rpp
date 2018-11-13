@@ -1,8 +1,12 @@
 #ifndef RPP_REQUEST_HPP
 #define RPP_REQUEST_HPP
 
+#include "body.hpp"
+#include "headers.hpp"
+#include "response.hpp"
+#include "url.hpp"
+
 #include "curl/curl.h"
-#include "types.hpp"
 
 namespace rpp {
     class Request {
