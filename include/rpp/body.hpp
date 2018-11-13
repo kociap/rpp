@@ -3,16 +3,13 @@
 
 #include "string.hpp"
 
-namespace rpp {
-    struct Body_Item {
-        String key;
-        String value;
-    };
+#include <map>
 
+namespace rpp {
     class Body {
     public:
-        void append(std::initializer_list<Body_Item> const&);
-        void append(Body_Item const&);
+        void append(std::map<String, String> const& params);
+        void append(String const& key, String const& value);
         String to_string() const;
 
     private:
