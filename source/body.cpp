@@ -1,6 +1,9 @@
 #include "rpp/body.hpp"
 
 namespace rpp {
+    Body::Body(String const& body) : body(body) {}
+    Body::Body(String&& body) : body(std::move(body)) {}
+
     void Body::append(std::map<String, String> const& params) {
         for (auto const& [key, value] : params) {
             append(key, value);

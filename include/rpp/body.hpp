@@ -8,6 +8,9 @@
 namespace rpp {
     class Body {
     public:
+        Body(String const&);
+        Body(String&&);
+
         void append(std::map<String, String> const& params);
         void append(String const& key, String const& value);
         String to_string() const;
