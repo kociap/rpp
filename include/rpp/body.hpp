@@ -8,6 +8,7 @@
 namespace rpp {
     class Body {
     public:
+        Body() = default;
         Body(String const&);
         Body(String&&);
 
