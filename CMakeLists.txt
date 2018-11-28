@@ -24,7 +24,7 @@ set(BUILD_TESTING CACHE BOOL OFF) # Disable curl tests
 set(BUILD_CURL_EXE CACHE BOOL OFF)
 add_subdirectory(curl)
 
-set(RPP_CURL_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/curl/include)
+set(RPP_CURL_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/curl/include)
 
 add_library(rpp STATIC ${RPP_SOURCE_FILES})
 target_link_libraries(rpp libcurl)
