@@ -6,17 +6,17 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD 17)
 
 set(RPP_SOURCE_FILES
-    ${PROJECT_SOURCE_DIR}/source/response.cpp
-    ${PROJECT_SOURCE_DIR}/source/rpp.cpp
-    ${PROJECT_SOURCE_DIR}/source/url.cpp
-    ${PROJECT_SOURCE_DIR}/source/body.cpp
-    ${PROJECT_SOURCE_DIR}/source/request.cpp
-    ${PROJECT_SOURCE_DIR}/source/urlsearchparams.cpp
-    ${PROJECT_SOURCE_DIR}/source/headers.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/response.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/rpp.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/url.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/body.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/request.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/urlsearchparams.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/headers.cpp
 )
 
 set(RPP_INCLUDE_DIRS
-    ${PROJECT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 # curl
