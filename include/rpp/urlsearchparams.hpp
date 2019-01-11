@@ -1,30 +1,29 @@
-#ifndef RPP_URL_SEARCH_PARAMS_HPP
-#define RPP_URL_SEARCH_PARAMS_HPP
-
-#include "string.hpp"
+#ifndef RPP_URL_SEARCH_PARAMS_HPP_INCLUDE
+#define RPP_URL_SEARCH_PARAMS_HPP_INCLUDE
 
 #include <map>
+#include <string>
 
 namespace rpp {
     class URL_Search_Params {
     public:
         URL_Search_Params() = default;
-        URL_Search_Params(String const& queryString);
+        URL_Search_Params(std::string const& queryString);
         URL_Search_Params(char const* queryString);
-        URL_Search_Params(std::map<String, String> const&);
-        URL_Search_Params(std::map<String, String>&&);
+        URL_Search_Params(std::map<std::string, std::string> const&);
+        URL_Search_Params(std::map<std::string, std::string>&&);
 
-        void append(String key, String value);
-        String get(String const& key);
-        bool has(String const& key);
-        void remove(String const& key);
-        void set(String key, String value);
+        void append(std::string key, std::string value);
+        std::string get(std::string const& key);
+        bool has(std::string const& key);
+        void remove(std::string const& key);
+        void set(std::string key, std::string value);
 
-        String to_string();
+        std::string to_string();
 
     private:
-        std::map<String, String> params;
+        std::map<std::string, std::string> params;
     };
 } // namespace rpp
 
-#endif // !RPP_URL_SEARCH_PARAMS_HPP
+#endif // !RPP_URL_SEARCH_PARAMS_HPP_INCLUDE

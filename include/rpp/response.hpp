@@ -1,15 +1,14 @@
-#ifndef RPP_RESPONSE_HPP
-#define RPP_RESPONSE_HPP
-
-#include "string.hpp"
+#ifndef RPP_RESPONSE_HPP_INCLUDE
+#define RPP_RESPONSE_HPP_INCLUDE
 
 #include <cstdint>
+#include <string>
 
 namespace rpp {
     struct Response {
         std::int32_t status;
-        String text;
+        std::string text;
     };
 } // namespace rpp
 
-#endif // !RPP_RESPONSE_HPP
+#endif // !RPP_RESPONSE_HPP_INCLUDE

@@ -1,9 +1,8 @@
-#ifndef RPP_HEADERS_HPP
-#define RPP_HEADERS_HPP
-
-#include "string.hpp"
+#ifndef RPP_HEADERS_HPP_INCLUDE
+#define RPP_HEADERS_HPP_INCLUDE
 
 #include <map>
+#include <string>
 
 namespace rpp {
     class Request;
@@ -13,14 +12,14 @@ namespace rpp {
 
     public:
         Headers() = default;
-        Headers(std::map<String, String> const&);
-        Headers(std::map<String, String>&&);
+        Headers(std::map<std::string, std::string> const&);
+        Headers(std::map<std::string, std::string>&&);
 
-        void append(String key, String value);
+        void append(std::string key, std::string value);
 
     private:
-        std::map<String, String> headers;
+        std::map<std::string, std::string> headers;
     };
 } // namespace rpp
 
-#endif // !RPP_HEADERS_HPP
+#endif // !RPP_HEADERS_HPP_INCLUDE

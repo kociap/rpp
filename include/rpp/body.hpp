@@ -1,24 +1,23 @@
-#ifndef RPP_BODY_HPP
-#define RPP_BODY_HPP
-
-#include "string.hpp"
+#ifndef RPP_BODY_HPP_INCLUDE
+#define RPP_BODY_HPP_INCLUDE
 
 #include <map>
+#include <string>
 
 namespace rpp {
     class Body {
     public:
         Body() = default;
-        Body(String const&);
-        Body(String&&);
+        Body(std::string const&);
+        Body(std::string&&);
 
-        void append(std::map<String, String> const& params);
-        void append(String const& key, String const& value);
-        String to_string() const;
+        void append(std::map<std::string, std::string> const& params);
+        void append(std::string const& key, std::string const& value);
+        std::string to_string() const;
 
     private:
-        String body;
+        std::string body;
     };
 } // namespace rpp
 
-#endif // !RPP_BODY_HPP
+#endif // !RPP_BODY_HPP_INCLUDE

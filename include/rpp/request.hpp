@@ -1,5 +1,5 @@
-#ifndef RPP_REQUEST_HPP
-#define RPP_REQUEST_HPP
+#ifndef RPP_REQUEST_HPP_INCLUDE
+#define RPP_REQUEST_HPP_INCLUDE
 
 #include "body.hpp"
 #include "headers.hpp"
@@ -31,4 +31,4 @@ namespace rpp {
     };
 } // namespace rpp
 
-#endif // !RPP_REQUEST_HPP
+#endif // !RPP_REQUEST_HPP_INCLUDE

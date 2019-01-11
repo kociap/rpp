@@ -57,14 +57,14 @@ namespace rpp {
         curl_easy_setopt(handle, CURLOPT_HTTPHEADER, headers);
     }
 
-    size_t curl_write_function(char* data, size_t, size_t data_size, String* user_data) {
+    size_t curl_write_function(char* data, size_t, size_t data_size, std::string* user_data) {
         user_data->append(data, data_size);
         return data_size;
     }
 
     Response Request::get(URL const& url) {
         Response res;
-        String full_url = url.get_full_url();
+        std::string full_url = url.get_full_url();
         curl_easy_setopt(handle, CURLOPT_URL, full_url.c_str());
         curl_easy_setopt(handle, CURLOPT_WRITEFUNCTION, curl_write_function);
         curl_easy_setopt(handle, CURLOPT_WRITEDATA, &res.text);
@@ -78,8 +78,8 @@ namespace rpp {
 
     Response Request::post(URL const& url, Body const& body) {
         Response res;
-        String data = body.to_string();
-        String full_url = url.get_full_url();
+        std::string data = body.to_string();
+        std::string full_url = url.get_full_url();
         curl_easy_setopt(handle, CURLOPT_URL, full_url.c_str());
         curl_easy_setopt(handle, CURLOPT_POST, 1);
         curl_easy_setopt(handle, CURLOPT_POSTFIELDS, data.c_str());
