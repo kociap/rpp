@@ -7,6 +7,7 @@
 namespace rpp {
     class URL {
     public:
+        URL() = default;
         URL(std::string const&);
         URL(std::string&&);
         URL(char const*);
