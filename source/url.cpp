@@ -9,14 +9,17 @@ namespace rpp {
 
     URL& URL::operator=(std::string const& str) {
         url = str;
+        return *this;
     }
 
     URL& URL::operator=(std::string&& str) {
         url = std::move(str);
+        return *this;
     }
 
     URL& URL::operator=(char const* str) {
         url = str;
+        return *this;
     }
 
     std::string URL::get_full_url() const {
