@@ -7,6 +7,18 @@ namespace rpp {
     URL::URL(std::string&& str) : url(std::move(str)) {}
     URL::URL(char const* str) : url(str) {}
 
+    URL& URL::operator=(std::string const& str) {
+        url = str;
+    }
+
+    URL& URL::operator=(std::string&& str) {
+        url = std::move(str);
+    }
+
+    URL& URL::operator=(char const* str) {
+        url = str;
+    }
+
     std::string URL::get_full_url() const {
         return url;
     }
